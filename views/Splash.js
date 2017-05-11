@@ -24,7 +24,7 @@ export default class Splash extends Component {
 
                 <Button
                     onPress={() => navigate('Overview')}
-                    title="Diensten aan boord"
+                    title="NS OnBoard Demo"
                     color="green"
                     accessibilityLabel="Deze"
                 />

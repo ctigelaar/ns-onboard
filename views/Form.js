@@ -7,20 +7,34 @@ import {
     Button
 } from 'react-native';
 
-export default class Splash extends Component {
+import { locate } from './BeaconUtils';
+
+export default class Form extends Component {
+
+    constructor(){
+      super();
+      this.state = {
+        location: "Onbekend"
+      }
+    }
 
     static navigationOptions = {
         title: 'Vul het formulier in'
     }
 
+    componentDidMount() {
+      locate()
+        .then(result => this.setState({ location: result }) )
+    }
+
     render() {
 
         const { navigate } = this.props.navigation;
-
+        const { location } = this.state
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
-                    Hier komt het formulier
+                    Hier komt het formulier. U zit nu: {location}
                 </Text>
                 <Button
                     onPress={() => navigate('Overview')}
@@ -46,8 +60,3 @@ const styles = StyleSheet.create({
         margin: 10,
     }
 });
-
-
-
-
-

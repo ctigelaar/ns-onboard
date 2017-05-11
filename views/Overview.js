@@ -19,15 +19,15 @@ export default class Overview extends Component {
         const { navigate } = this.props.navigation;
 
         const buttons = [
-            {title: 'Vieze coupe', route: 'Form'},
-            {title: 'Conducteur spreken', route: 'Form'},
-            {title: 'Gevonden voorwerp', route: 'Form'},
-            {title: 'Button D', route: 'Form'},
+            {title: 'Vuile coupé', route: 'FormOther'},
+            {title: 'Voorwerp gevonden', route: 'FormOther'},
+            {title: 'Defect aan de trein', route: 'FormOther'}
         ];
 
         return (
             <View style={styles.container}>
-                <Text style={styles.intro}>We willen u graag op weg helpen. Maak hieronder uw keuze.</Text>
+                <Text style={styles.intro}>Welkom aan boord van de trein naar station Zwolle. De hoofdconducteur op deze trein is Con Ducteur. Er is op deze trein catering aanwezig.</Text>
+                <Text style={styles.intro}>Waarmee kan ik u van dienst zijn?</Text>
                 {buttons.map((button, key) => {
                     return (
                         <View style={styles.row} key={key}>
@@ -37,7 +37,7 @@ export default class Overview extends Component {
                 })}
                 <View style={styles.row}>
                     <Text style={styles.otherIntro}>Staat uw vraag er niet tussen?.</Text>
-                    <Button color="red" title="Anders" onPress={() => navigate('Other')} />
+                    <Button color="red" title="Assistentie vragen" onPress={() => navigate('FormOther')} />
                 </View>
             </View>
         );

@@ -13,12 +13,16 @@ import { StackNavigator } from 'react-navigation';
 
 import Splash from './views/Splash';
 import Overview from './views/Overview';
+import Thankyou from './views/Thankyou';
 import Form from './views/Form';
+import FormOther from './views/FormOther';
 
 const App = StackNavigator({
     Splash: {screen: Splash},
     Overview: {screen: Overview},
-    Form: {screen: Form}
+    Form: {screen: Form},
+    FormOther: {screen: FormOther},
+    Thankyou: {screen: Thankyou}
 }, {
     navigationOptions: {
         headerStyle: {

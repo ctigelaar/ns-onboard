@@ -42,7 +42,7 @@ export default class FormOther extends Component {
                 </View>
                 <View style={styles.formRow}>
                     <Button
-                        onPress={() => onSubmit(this.state.subject)}
+                        onPress={() => navigate('Thankyou')}
                         title="Versturen"
                         color="#0079d3"
                         accessibilityLabel="Deze"
@@ -53,9 +53,6 @@ export default class FormOther extends Component {
     }
 };
 
-const onSubmit = (subject) => {
-    Alert.alert('Verzonden waarde: ' + subject);
-}
 
 const styles = StyleSheet.create({
     container: {

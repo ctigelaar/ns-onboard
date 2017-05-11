@@ -6,17 +6,46 @@
 
 import React, { Component } from 'react';
 import {
-    AppRegistry
+    AppRegistry,
 } from 'react-native';
 
-import Dummy from './views/Dummy';
+import { StackNavigator } from 'react-navigation';
 
-export default class NSOnBoard extends Component {
-    render() {
-        return (
-            <Dummy />
-        );
+import Splash from './views/Splash';
+import Overview from './views/Overview';
+
+const App = StackNavigator({
+    Splash: {screen: Splash},
+    Overview: {screen: Overview}
+}, {
+    navigationOptions: {
+        headerStyle: {
+            backgroundColor: '#ffc917',
+        },
+        headerTitleStyle: {
+            color: '#003082'
+        },
+        headerBackTitleStyle: {
+            color: '#003082',
+            backgroundColor: '#003082'
+        }
     }
-};
+});
 
-AppRegistry.registerComponent('NSOnBoard', () => NSOnBoard);
+// export default class NSOnBoard extends Component {
+//     render() {
+//         return (
+//             <Navigator
+//                 initialRoute={{id: 'Splash', name: 'Index'}}
+//                 renderScene={this.renderScene.bind(this)}
+//                 configureScene={(route) => {
+//                     if (route.sceneConfig) {
+//                         return route.sceneConfig;
+//                     }
+//                     return Navigator.SceneConfigs.FloatFromRight;
+//                 }} />
+//         );
+//     }
+// };
+
+AppRegistry.registerComponent('NSOnBoard', () => App);

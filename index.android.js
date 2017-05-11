@@ -13,11 +13,13 @@ import { StackNavigator } from 'react-navigation';
 
 import Splash from './views/Splash';
 import Overview from './views/Overview';
+import Thankyou from './views/Thankyou';
 import Form from './views/Form';
 
 const App = StackNavigator({
     Splash: {screen: Splash},
     Overview: {screen: Overview},
+    Thankyou: {screen: Thankyou},
     Form: {screen: Form}
 }, {
     navigationOptions: {

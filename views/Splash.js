@@ -28,6 +28,13 @@ export default class Splash extends Component {
                     color="green"
                     accessibilityLabel="Deze"
                 />
+
+                <Button
+                    onPress={() => navigate('Thankyou')}
+                    title="Bedanktpagina"
+                    color="red"
+                    accessibilityLabel="Deze"
+                />
             </View>
          </Image>
         );

@@ -1,0 +1,3 @@
+rootProject.name = 'NSOnBoard'
+
+include ':app'

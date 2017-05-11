@@ -4,30 +4,33 @@ import {
     View,
     StyleSheet,
     Text,
-    Alert,
     Button
 } from 'react-native';
 
-export default class Dummy extends Component {
+export default class Splash extends Component {
+
+    static navigationOptions = {
+        title: 'Vul het formulier in'
+    }
+
     render() {
+
+        const { navigate } = this.props.navigation;
+
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
-                    Hier komt een screenshot
+                    Hier komt het formulier
                 </Text>
                 <Button
-                    onPress={onPressGoToOverview}
-                    title="Diensten aan boord"
+                    onPress={() => navigate('Overview')}
+                    title="Terug"
                     color="#841584"
                     accessibilityLabel="Deze"
                 />
             </View>
         );
     }
-};
-
-const onPressGoToOverview = () => {
-    Alert.alert('Button has been pressed!');
 };
 
 const styles = StyleSheet.create({

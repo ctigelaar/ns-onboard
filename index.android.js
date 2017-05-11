@@ -10,12 +10,27 @@ import {
   StyleSheet,
   ToolbarAndroid,
   Text,
-  View
+  View,
+  DeviceEventEmitter
 } from 'react-native';
 
 import nativeImageSource from 'nativeImageSource';
 
+import { init, startScanning } from 'react-native-kontaktio';
+
 export default class NSOnBoard extends Component {
+  componentDidMount() {
+    init()
+      .then(() => startScanning())
+      .catch(error => console.log('error', error));
+
+    DeviceEventEmitter.addListener(
+      'beaconsDidUpdate',
+      ({ beacons, region }) => {
+        console.log('beaconsDidUpdate', beacons, region);
+      }
+    );
+  }
   render() {
           return (
               <ToolbarAndroid

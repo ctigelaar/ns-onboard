@@ -4,19 +4,26 @@ import {
     View,
     StyleSheet,
     Text,
-    Alert,
     Button
 } from 'react-native';
 
-export default class Dummy extends Component {
+export default class Splash extends Component {
+
+    static navigationOptions = {
+        title: 'Welkom'
+    }
+
     render() {
+
+        const { navigate } = this.props.navigation;
+
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
                     Hier komt een screenshot
                 </Text>
                 <Button
-                    onPress={onPressGoToOverview}
+                    onPress={() => navigate('Overview')}
                     title="Diensten aan boord"
                     color="#841584"
                     accessibilityLabel="Deze"
@@ -24,10 +31,6 @@ export default class Dummy extends Component {
             </View>
         );
     }
-};
-
-const onPressGoToOverview = () => {
-    Alert.alert('Button has been pressed!');
 };
 
 const styles = StyleSheet.create({

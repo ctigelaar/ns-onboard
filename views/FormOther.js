@@ -9,6 +9,8 @@ import {
     Alert
 } from 'react-native';
 
+import { locate } from './BeaconUtils';
+
 export default class FormOther extends Component {
 
     static navigationOptions = {
@@ -18,8 +20,14 @@ export default class FormOther extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            subject: ''
+            subject: '',
+            location: 'Onbekend'
         };
+    }
+
+    componentDidMount() {
+        locate()
+            .then(result => this.setState({ location: result }) )
     }
 
     render() {
@@ -37,6 +45,15 @@ export default class FormOther extends Component {
                         style={styles.inputDefault}
                         onChangeText={(text) => this.setState({subject: text})}
                         value={this.state.subject}
+                        underlineColorAndroid="#0079d3"
+                    />
+                </View>
+                <View style={styles.formRow}>
+                    <Text style={styles.label}>Uw locatie</Text>
+                    <TextInput
+                        editable={false}
+                        style={styles.inputDefault}
+                        value={this.state.location}
                         underlineColorAndroid="#0079d3"
                     />
                 </View>

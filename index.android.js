@@ -13,10 +13,12 @@ import { StackNavigator } from 'react-navigation';
 
 import Splash from './views/Splash';
 import Overview from './views/Overview';
+import Form from './views/Form';
 
 const App = StackNavigator({
     Splash: {screen: Splash},
-    Overview: {screen: Overview}
+    Overview: {screen: Overview},
+    Form: {screen: Form}
 }, {
     navigationOptions: {
         headerStyle: {
@@ -31,21 +33,5 @@ const App = StackNavigator({
         }
     }
 });
-
-// export default class NSOnBoard extends Component {
-//     render() {
-//         return (
-//             <Navigator
-//                 initialRoute={{id: 'Splash', name: 'Index'}}
-//                 renderScene={this.renderScene.bind(this)}
-//                 configureScene={(route) => {
-//                     if (route.sceneConfig) {
-//                         return route.sceneConfig;
-//                     }
-//                     return Navigator.SceneConfigs.FloatFromRight;
-//                 }} />
-//         );
-//     }
-// };
 
 AppRegistry.registerComponent('NSOnBoard', () => App);

@@ -4,8 +4,7 @@ import {
     View,
     StyleSheet,
     Text,
-    Button,
-    Image
+    TouchableOpacity
 } from 'react-native';
 
 export default class Splash extends Component {
@@ -20,7 +19,7 @@ export default class Splash extends Component {
 
         return (
 
-        <View style={styles.intro}>
+        <View style={styles.container}>
             <Text style={styles.intro}>Bedankt voor uw melding. Deze is doorgestuurd naar de hoofdconducteur.</Text>
         </View>
         );

@@ -4,31 +4,32 @@ import {
     View,
     StyleSheet,
     Text,
-    Button
+    Button,
+    Image
 } from 'react-native';
 
 export default class Splash extends Component {
 
-    static navigationOptions = {
-        title: 'Welkom'
-    }
+   static navigationOptions = {
+        header: null
+   }
 
     render() {
 
         const { navigate } = this.props.navigation;
 
         return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    Hier komt een screenshot
-                </Text>
+        <Image source={require('../assets/images/reisplannerxtra.png')} style={styles.backgroundImage} resizeMode={Image.resizeMode.sretch} >
+            <View style={styles.welcome}>
+
                 <Button
                     onPress={() => navigate('Overview')}
                     title="Diensten aan boord"
-                    color="#841584"
+                    color="green"
                     accessibilityLabel="Deze"
                 />
             </View>
+         </Image>
         );
     }
 };
@@ -41,9 +42,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5FCFF',
     },
     welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
+        margin: 12,
+        marginTop: 500
+    },
+    backgroundImage: {
+        flex: 1,
+        width: null,
+        height: null,
     }
 });
 

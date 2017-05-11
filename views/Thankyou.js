@@ -4,13 +4,12 @@ import {
     View,
     StyleSheet,
     Text,
-    TouchableOpacity
 } from 'react-native';
 
 export default class Splash extends Component {
 
     static navigationOptions = {
-        title: 'NS OnBoard',
+        title: 'Bedankt',
     }
 
     render() {

@@ -19,9 +19,9 @@ export default class Overview extends Component {
         const { navigate } = this.props.navigation;
 
         const buttons = [
-            {title: 'Vuile coupé', route: 'Form'},
-            {title: 'Voorwerp gevonden', route: 'Form'},
-            {title: 'Defect aan de trein', route: 'Form'}
+            {title: 'Vuile coupé', route: 'FormOther'},
+            {title: 'Voorwerp gevonden', route: 'FormOther'},
+            {title: 'Defect aan de trein', route: 'FormOther'}
         ];
 
         return (

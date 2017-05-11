@@ -21,18 +21,10 @@ export default class Splash extends Component {
         return (
         <Image source={require('../assets/images/reisplannerxtra.png')} style={styles.backgroundImage} resizeMode={Image.resizeMode.sretch} >
             <View style={styles.welcome}>
-
                 <Button
                     onPress={() => navigate('Overview')}
                     title="NS OnBoard Demo"
                     color="green"
-                    accessibilityLabel="Deze"
-                />
-
-                <Button
-                    onPress={() => navigate('Thankyou')}
-                    title="Bedanktpagina"
-                    color="red"
                     accessibilityLabel="Deze"
                 />
             </View>

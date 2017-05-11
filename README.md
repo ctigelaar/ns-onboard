@@ -1,2 +1,0 @@
-# ns-onboard
-Hackathon project
